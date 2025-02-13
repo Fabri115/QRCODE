@@ -1,14 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Fisso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>QR Code WEST LODI</title>
     
     <!-- Libreria per generare il QR Code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    
+
+    <!-- Link al logo di Instagram (Icone) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
+        /* Impedire lo scrolling e fissare la larghezza e l'altezza */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Disabilita lo scroll */
+            height: 100%; /* Imposta altezza al 100% */
+            width: 100%; /* Imposta larghezza al 100% */
+        }
+        
         body {
             text-align: center;
             background-image: url('background.jpg'); /* Immagine di sfondo */
@@ -17,6 +30,12 @@
             color: white;
             font-family: Arial, sans-serif;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Aggiungi altezza minima */
+            box-sizing: border-box; /* Per includere padding e border nella larghezza e altezza */
         }
         #qrcode {
             margin: 20px auto;
@@ -29,34 +48,64 @@
             padding: 10px;
             border-radius: 10px;
         }
-        textarea {
-            width: 80%;
-            height: 100px;
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
         }
+        .instagram-btn {
+            background-color: #f7f7f7;
+            border-radius: 50%;
+            margin: 10px;
+            padding: 15px;
+            font-size: 24px;
+            color: #e1306c;
+            transition: transform 0.3s ease;
+        }
+        .instagram-btn:hover {
+            transform: scale(1.2);
+        }
+        .link-container {
+            margin-top: 30px;
+        }
+        .link-container a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
     </style>
 </head>
 <body>
 
-    <h2>TAT - ORO</h2>
+    <h2> </h2>
     <div id="qrcode"></div> <!-- Qui verrà generato il QR Code -->
 
-    <h3>Ascolta il mio ultimo singolo</h3>
+    <h3>Riproduci Audio</h3>
     <audio controls>
         <source src="QRCode_Project_audio.mp3" type="audio/mpeg">
-        <source src="audio.wav" type="audio/wav">
+        <source src=".wav" type="audio/wav">
+        <source src="audio.ogg" type="audio/ogg">
         Il tuo browser non supporta l'audio.
     </audio>
 
-    <h3>Testo Aggiuntivo</h3>
-    <textarea id="textSection" placeholder="''BRILLO COME ORO''..."></textarea>
+    <div class="button-container">
+        <!-- Bottoni Instagram -->
+        <div class="instagram-item">
+        <a href="https://www.instagram.com/tatiana_zanca" target="_blank" class="instagram-btn"><i class="fab fa-instagram"></i></a>
+        <p class="instagram-name">Tat</p>
+        </div>
+
+    <div class="link-container">
+        <p>Visita la pagina cliccando sul link qui sotto:</p>
+        <a href="https://open.spotify.com/intl-it/artist/3LwwsugEQIIk3SneHCWreZ?si=4CYrrysUSMSH0b6V-iRegg" target="_blank">Apri la mia pagina</a>
+    </div>
 
     <script>
         // Genera il QR Code fisso
         new QRCode(document.getElementById("qrcode"), {
-            text: "https://open.spotify.com/intl-it/artist/3LwwsugEQIIk3SneHCWreZ?si=wR9ImMSxRtCEucUTMNnzlw",  // Sostituisci con il tuo link fisso
+            text: "https://open.spotify.com/intl-it/artist/3LwwsugEQIIk3SneHCWreZ?si=4CYrrysUSMSH0b6V-iRegg",  // Sostituisci con il tuo link fisso
             width: 200,
             height: 200
         });
