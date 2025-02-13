@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Fisso</title>
+    
+    <!-- Libreria per generare il QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <style>
+        body {
+            text-align: center;
+            background-image: url('background.jpg'); /* Immagine di sfondo */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #qrcode {
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>TAT - ORO</h2>
+    <div id="qrcode"></div> <!-- Qui verrà generato il QR Code -->
+
+    <h3>Ascolta il mio ultimo singolo</h3>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.wav" type="audio/wav">
+        Il tuo browser non supporta l'audio.
+    </audio>
+
+    <h3>Testo Aggiuntivo</h3>
+    <textarea id="textSection" placeholder="''BRILLO COME ORO''..."></textarea>
+
+    <script>
+        // Genera il QR Code fisso
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://open.spotify.com/intl-it/artist/3LwwsugEQIIk3SneHCWreZ?si=wR9ImMSxRtCEucUTMNnzlw",  // Sostituisci con il tuo link fisso
+            width: 200,
+            height: 200
+        });
+    </script>
+
+</body>
+</html>
